@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.tubemogul.com/oauth/token
+    body:
+      encoding: UTF-8
+      string: grant_type=client_credentials
+    headers:
+      Authorization:
+      - clipped
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Faraday v0.15.3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 17 Oct 2018 21:25:12 GMT
+      Content-Type:
+      - application/json
+      Cache-Control:
+      - no-store
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '155'
+    body:
+      encoding: UTF-8
+      string: '{"account_id":12345,"token":"some-token","scope":"login_mode:self","token_type":"bearer","expire_time":1539815112,"expires_in":3600}'
+    http_version: 
+  recorded_at: Wed, 17 Oct 2018 21:25:12 GMT
+- request:
+    method: get
+    uri: https://api.tubemogul.com/v3/trafficking/advertisers/sample-advertiser-id
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - clipped
+      User-Agent:
+      - Faraday v0.15.3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 17 Oct 2018 21:25:12 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      Connection:
+      - close
+      Cache-Control:
+      - private
+    body:
+      encoding: UTF-8
+      string: '{"@uri":"https://api.tubemogul.com/v3/trafficking/advertisers/sample-advertiser-id","@type":"Advertiser","advertiser_id":"sample-advertiser-id","account_id":"12345","advertiser_name":"Advertiser
+        sample-advertiser-id","advertiser_domain":"https://sample-advertiser-id.example.com","product_category_id":"704","is_exempt_ad_swap":"F","status":"Active","ims_org_id":null,"aam_setup":"F","aam_import_all_segments":"F","amo_client":null,"reportsuite_ids":[]}'
+    http_version: 
+  recorded_at: Wed, 17 Oct 2018 21:25:13 GMT
+recorded_with: VCR 4.0.0
