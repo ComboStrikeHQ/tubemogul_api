@@ -21,8 +21,7 @@ class TubemogulApi::Service
 
     endpoint = @@endpoints['service'][name]
 
-    endpoint || raise(TubemogulApi::NotImplemented,
-      format('No endpoint for service %s available.', name))
+    endpoint || raise(TubemogulApi::NotImplemented, "No endpoint for service #{name} available.")
   end
 
   def get(id, params = {})

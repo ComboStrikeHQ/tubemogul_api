@@ -26,7 +26,7 @@ Or install it yourself as:
 
 connection = TubemogulApi::Connection.new
 
-# Otherwise you can explicit pass client_id and secret_key:
+# Otherwise you can explicitly pass client_id and secret_key:
 connection = TubemogulApi::Connection.new(
   client_id: ENV.fetch('TUBEMOGUL_CLIENT_ID'),
   secret_key: ENV.fetch('TUBEMOGUL_SECRET_KEY')
