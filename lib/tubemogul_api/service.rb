@@ -15,7 +15,7 @@ class TubemogulApi::Service
   end
 
   def uri_suffix
-    @@endpoints ||= YAML.load_file(
+    @@endpoints ||= YAML.load_file( # rubocop:disable Style/ClassVars
       TubemogulApi.root.join('lib', 'config', 'endpoints_for_services.yaml')
     )
 

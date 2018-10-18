@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class TubemogulApi::Connection
-  TUBEMOGUL_API_URL = 'https://api.tubemogul.com'
+  TUBEMOGUL_API_URL = 'https://api.tubemogul.com'.freeze
 
   attr_reader :config
 
@@ -10,39 +10,20 @@ class TubemogulApi::Connection
   end
 
   def connection
-    @connection ||= Faraday.new(url) do |conn|
-      conn.request :json
-      conn.response :json, content_type: /\bjson$/
-      conn.use TubemogulApi::Faraday::Response::RaiseHttpError
-      conn.adapter Faraday.default_adapter
+    @connection ||= connection_builder do |conn|
       conn.authorization 'Bearer', token
     end
   end
 
-  def token
-    @token ||= get_authorization_token
+  def get(uri_suffix, params = {})
+    connection.get(uri_suffix, params)
   end
 
-  def get_authorization_token
-    connection = Faraday.new(url) do |conn|
-      conn.request :json
-      conn.response :json, content_type: /\bjson$/
-      conn.use TubemogulApi::Faraday::Response::RaiseHttpError
-      conn.adapter Faraday.default_adapter
-      conn.basic_auth client_id, secret_key
-      conn.headers['Content-Type'] = 'application/x-www-form-urlencoded'
-      conn.headers['Cache-Control'] = 'no-cache'
-    end
-
-    response = connection.run_request(
-      :post,
-      'oauth/token',
-      'grant_type=client_credentials',
-      nil
-    )
-
-    response.body['token']
+  def post(uri_suffix, params = {})
+    connection.post(uri_suffix, params)
   end
+
+  private
 
   def url
     config.fetch(:url, TUBEMOGUL_API_URL)
@@ -56,11 +37,29 @@ class TubemogulApi::Connection
     config.fetch(:secret_key, ENV['TUBEMOGUL_SECRET_KEY'])
   end
 
-  def get(uri_suffix, params = {})
-    connection.get(uri_suffix, params)
+  def token
+    @token ||= fetch_authorization_token
   end
 
-  def post(uri_suffix, params = {})
-    connection.post(uri_suffix, params)
+  def fetch_authorization_token
+    connection = connection_builder do |conn|
+      conn.basic_auth client_id, secret_key
+      conn.headers['Content-Type'] = 'application/x-www-form-urlencoded'
+      conn.headers['Cache-Control'] = 'no-cache'
+    end
+
+    response = connection.run_request(:post, 'oauth/token', 'grant_type=client_credentials', nil)
+
+    response.body['token']
+  end
+
+  def connection_builder
+    Faraday.new(url) do |conn|
+      conn.request :json
+      conn.response :json, content_type: /\bjson$/
+      conn.use TubemogulApi::Faraday::Response::RaiseHttpError
+      conn.adapter Faraday.default_adapter
+      yield conn
+    end
   end
 end

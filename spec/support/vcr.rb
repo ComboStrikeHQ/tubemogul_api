@@ -17,7 +17,7 @@ VCR.configure do |c|
   c.filter_sensitive_data('tubemogul-secret-key') { ENV.fetch('TUBEMOGUL_SECRET_KEY') }
   c.filter_sensitive_data('sample-advertiser-id') { ENV.fetch('SAMPLE_ADVERTISER_ID') }
 
-  FAKE_ACCOUNT_ID = '12345'
+  FAKE_ACCOUNT_ID = '12345'.freeze
 
   # filter other sensitive data from response
   c.before_record do |interaction|
@@ -27,13 +27,13 @@ VCR.configure do |c|
     interaction.filter!(response['token'], 'some-token')
   end
 
-  anonymize_advertiser = -> (advertiser, id) do
+  anonymize_advertiser = lambda do |advertiser, id|
     advertiser.each_key do |key|
       case key
       when 'advertiser_id'
         advertiser[key] = id
       when '@uri'
-        advertiser[key] = advertiser[key].sub(/(trafficking\/advertisers\/)([^\?]+)/, "\\1#{id}")
+        advertiser[key] = advertiser[key].sub(%r{(trafficking\/advertisers\/)([^\?]+)}, "\\1#{id}")
       when 'advertiser_name'
         advertiser[key] = "Advertiser #{id}"
       when 'advertiser_domain'
@@ -45,7 +45,7 @@ VCR.configure do |c|
   end
 
   c.before_record do |interaction|
-    next unless interaction.request.uri =~ /trafficking\/advertisers\/sample-advertiser-id\z/
+    next unless interaction.request.uri.end_with?('trafficking/advertisers/sample-advertiser-id')
 
     response = JSON.parse(interaction.response.body)
     anonymize_advertiser.call(response, 'sample-advertiser-id')
@@ -54,7 +54,7 @@ VCR.configure do |c|
   end
 
   c.before_record do |interaction|
-    next unless interaction.request.uri =~ /trafficking\/advertisers\z/
+    next unless interaction.request.uri.end_with?('trafficking/advertisers')
 
     response = JSON.parse(interaction.response.body)
     items = response['items']
