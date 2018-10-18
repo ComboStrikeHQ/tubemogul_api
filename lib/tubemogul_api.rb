@@ -7,7 +7,6 @@ require 'tubemogul_api/faraday/raise_http_error'
 
 require 'tubemogul_api/connection'
 require 'tubemogul_api/service'
-require 'tubemogul_api/resource'
 require 'tubemogul_api/version'
 
 module TubemogulApi

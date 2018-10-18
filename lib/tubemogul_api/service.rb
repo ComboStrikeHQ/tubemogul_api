@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'yaml'
+require 'ostruct'
 
 class TubemogulApi::Service
   def initialize(connection)
@@ -43,7 +44,7 @@ class TubemogulApi::Service
         parse_response(json)
       end
     when 'Advertiser'
-      TubemogulApi::Resource::Advertiser.new(response, self)
+      OpenStruct.new(response)
     else
       raise(TubemogulApi::NotImplemented, format('Unknown response type %s.', response['@type']))
     end
