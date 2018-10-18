@@ -45,7 +45,7 @@ VCR.configure do |c|
   end
 
   c.before_record do |interaction|
-    next unless interaction.request.uri.end_with?('trafficking/advertisers/sample-advertiser-id')
+    next unless interaction.request.uri =~ %r{trafficking\/advertisers\/sample-advertiser-id(\?.*)?}
 
     response = JSON.parse(interaction.response.body)
     anonymize_advertiser.call(response, 'sample-advertiser-id')
@@ -54,12 +54,13 @@ VCR.configure do |c|
   end
 
   c.before_record do |interaction|
-    next unless interaction.request.uri.end_with?('trafficking/advertisers')
+    next unless interaction.request.uri =~ %r{trafficking\/advertisers(\?.*)?}
 
     response = JSON.parse(interaction.response.body)
     items = response['items']
+    offset = response['paging']['offset']
     items.each_with_index do |item, index|
-      anonymize_advertiser.call(item, index + 1)
+      anonymize_advertiser.call(item, index + offset + 1)
     end
 
     interaction.response.body = response.to_json
