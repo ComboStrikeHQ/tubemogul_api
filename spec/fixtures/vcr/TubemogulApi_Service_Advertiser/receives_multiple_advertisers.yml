@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 17 Oct 2018 21:25:13 GMT
+      - Thu, 18 Oct 2018 21:26:37 GMT
       Content-Type:
       - application/json
       Cache-Control:
@@ -36,12 +36,12 @@ http_interactions:
       - '155'
     body:
       encoding: UTF-8
-      string: '{"account_id":12345,"token":"some-token","scope":"login_mode:self","token_type":"bearer","expire_time":1539815113,"expires_in":3600}'
+      string: '{"account_id":12345,"token":"some-token","scope":"login_mode:self","token_type":"bearer","expire_time":1539901597,"expires_in":3600}'
     http_version: 
-  recorded_at: Wed, 17 Oct 2018 21:25:13 GMT
+  recorded_at: Thu, 18 Oct 2018 21:26:37 GMT
 - request:
     method: get
-    uri: https://api.tubemogul.com/v3/trafficking/advertisers
+    uri: https://api.tubemogul.com/v3/trafficking/advertisers?limit=5
     body:
       encoding: US-ASCII
       string: ''
@@ -60,7 +60,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 17 Oct 2018 21:25:14 GMT
+      - Thu, 18 Oct 2018 21:26:38 GMT
       Access-Control-Allow-Origin:
       - "*"
       Content-Type:
@@ -73,15 +73,52 @@ http_interactions:
       - private
     body:
       encoding: UTF-8
-      string: '{"@uri":"https://api.tubemogul.com/v3/trafficking/advertisers/?limit=50&offset=0","@type":"Collection","paging":{"total_num_items":8,"limit":50,"offset":0,"num_items":8,"has_more_items":false},"items":[{"@uri":"https://api.tubemogul.com/v3/trafficking/advertisers/1","@type":"Advertiser","advertiser_id":1,"account_id":"12345","advertiser_name":"Advertiser
+      string: '{"@uri":"https://api.tubemogul.com/v3/trafficking/advertisers/?limit=5&offset=0","@type":"Collection","paging":{"total_num_items":8,"limit":5,"offset":0,"num_items":5,"has_more_items":true,"next_page_uri":"https://api.tubemogul.com/v3/trafficking/advertisers/?limit=5&offset=5"},"items":[{"@uri":"https://api.tubemogul.com/v3/trafficking/advertisers/1","@type":"Advertiser","advertiser_id":1,"account_id":"12345","advertiser_name":"Advertiser
         1","advertiser_domain":"https://1.example.com","product_category_id":"704","is_exempt_ad_swap":"F","status":"Active","ims_org_id":null,"aam_setup":"F","aam_import_all_segments":"F","amo_client":null,"reportsuite_ids":[]},{"@uri":"https://api.tubemogul.com/v3/trafficking/advertisers/2","@type":"Advertiser","advertiser_id":2,"account_id":"12345","advertiser_name":"Advertiser
         2","advertiser_domain":"https://2.example.com","product_category_id":"325","is_exempt_ad_swap":"F","status":"Active","ims_org_id":null,"aam_setup":"F","aam_import_all_segments":"F","amo_client":null,"reportsuite_ids":[]},{"@uri":"https://api.tubemogul.com/v3/trafficking/advertisers/3","@type":"Advertiser","advertiser_id":3,"account_id":"12345","advertiser_name":"Advertiser
         3","advertiser_domain":"https://3.example.com","product_category_id":"325","is_exempt_ad_swap":"F","status":"Active","ims_org_id":null,"aam_setup":"F","aam_import_all_segments":"F","amo_client":null,"reportsuite_ids":[]},{"@uri":"https://api.tubemogul.com/v3/trafficking/advertisers/4","@type":"Advertiser","advertiser_id":4,"account_id":"12345","advertiser_name":"Advertiser
         4","advertiser_domain":"https://4.example.com","product_category_id":"325","is_exempt_ad_swap":"F","status":"Active","ims_org_id":null,"aam_setup":"F","aam_import_all_segments":"F","amo_client":null,"reportsuite_ids":[]},{"@uri":"https://api.tubemogul.com/v3/trafficking/advertisers/5","@type":"Advertiser","advertiser_id":5,"account_id":"12345","advertiser_name":"Advertiser
-        5","advertiser_domain":"https://5.example.com","product_category_id":"325","is_exempt_ad_swap":"F","status":"Active","ims_org_id":null,"aam_setup":"F","aam_import_all_segments":"F","amo_client":null,"reportsuite_ids":[]},{"@uri":"https://api.tubemogul.com/v3/trafficking/advertisers/6","@type":"Advertiser","advertiser_id":6,"account_id":"12345","advertiser_name":"Advertiser
+        5","advertiser_domain":"https://5.example.com","product_category_id":"325","is_exempt_ad_swap":"F","status":"Active","ims_org_id":null,"aam_setup":"F","aam_import_all_segments":"F","amo_client":null,"reportsuite_ids":[]}]}'
+    http_version: 
+  recorded_at: Thu, 18 Oct 2018 21:26:38 GMT
+- request:
+    method: get
+    uri: https://api.tubemogul.com/v3/trafficking/advertisers/?limit=5&offset=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - clipped
+      User-Agent:
+      - Faraday v0.15.3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 18 Oct 2018 21:26:38 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      Connection:
+      - close
+      Cache-Control:
+      - private
+    body:
+      encoding: UTF-8
+      string: '{"@uri":"https://api.tubemogul.com/v3/trafficking/advertisers/?limit=5&offset=5","@type":"Collection","paging":{"total_num_items":8,"limit":5,"offset":5,"num_items":3,"has_more_items":false,"prev_page_uri":"https://api.tubemogul.com/v3/trafficking/advertisers/?limit=5&offset=0"},"items":[{"@uri":"https://api.tubemogul.com/v3/trafficking/advertisers/6","@type":"Advertiser","advertiser_id":6,"account_id":"12345","advertiser_name":"Advertiser
         6","advertiser_domain":"https://6.example.com","product_category_id":"325","is_exempt_ad_swap":"F","status":"Active","ims_org_id":null,"aam_setup":"F","aam_import_all_segments":"F","amo_client":null,"reportsuite_ids":[]},{"@uri":"https://api.tubemogul.com/v3/trafficking/advertisers/7","@type":"Advertiser","advertiser_id":7,"account_id":"12345","advertiser_name":"Advertiser
         7","advertiser_domain":"https://7.example.com","product_category_id":"325","is_exempt_ad_swap":"F","status":"Active","ims_org_id":null,"aam_setup":"F","aam_import_all_segments":"F","amo_client":null,"reportsuite_ids":[]},{"@uri":"https://api.tubemogul.com/v3/trafficking/advertisers/8","@type":"Advertiser","advertiser_id":8,"account_id":"12345","advertiser_name":"Advertiser
         8","advertiser_domain":"https://8.example.com","product_category_id":"325","is_exempt_ad_swap":"F","status":"Active","ims_org_id":null,"aam_setup":"F","aam_import_all_segments":"F","amo_client":null,"reportsuite_ids":[]}]}'
     http_version: 
-  recorded_at: Wed, 17 Oct 2018 21:25:14 GMT
+  recorded_at: Thu, 18 Oct 2018 21:26:38 GMT
 recorded_with: VCR 4.0.0

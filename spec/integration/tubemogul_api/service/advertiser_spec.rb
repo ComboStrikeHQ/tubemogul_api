@@ -17,15 +17,17 @@ RSpec.describe TubemogulApi::Service::Advertiser, :vcr do
   end
 
   it 'receives multiple advertisers' do
-    response = service.get_all
+    response = service.get_all(limit: 5).to_a
+
+    expect(response.size).to eq(8)
 
     expect(response.first.advertiser_id).to eq(1)
     expect(response.first.advertiser_name).to eq('Advertiser 1')
     expect(response.first.status).to eq('Active')
 
-    expect(response[1].advertiser_id).to eq(2)
-    expect(response[1].advertiser_name).to eq('Advertiser 2')
-    expect(response[1].status).to eq('Active')
+    expect(response.last.advertiser_id).to eq(8)
+    expect(response.last.advertiser_name).to eq('Advertiser 8')
+    expect(response.last.status).to eq('Active')
   end
 
   it 'receives an http status error' do
