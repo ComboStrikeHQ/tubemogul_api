@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.tubemogul.com/oauth/token
+    body:
+      encoding: UTF-8
+      string: grant_type=client_credentials
+    headers:
+      Authorization:
+      - clipped
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Faraday v0.15.3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 19 Oct 2018 20:08:20 GMT
+      Content-Type:
+      - application/json
+      Cache-Control:
+      - no-store
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '155'
+    body:
+      encoding: UTF-8
+      string: '{"account_id":123456,"token":"some-token","scope":"login_mode:self","token_type":"bearer","expire_time":1539983300,"expires_in":3600}'
+    http_version: 
+  recorded_at: Fri, 19 Oct 2018 20:08:20 GMT
+- request:
+    method: get
+    uri: https://api.tubemogul.com/v3/trafficking/campaigns
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - clipped
+      User-Agent:
+      - Faraday v0.15.3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 19 Oct 2018 20:08:21 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      Connection:
+      - close
+      Cache-Control:
+      - private
+    body:
+      encoding: UTF-8
+      string: '{"@uri":"https://api.tubemogul.com/v3/trafficking/campaigns?limit=50&offset=0&filter_templates=F","@type":"Collection","paging":{"total_num_items":10,"limit":50,"offset":0,"num_items":10,"has_more_items":false},"items":[{"@uri":"https://api.tubemogul.com/v3/trafficking/campaigns/1","campaign_id":1,"campaign_key":"key1","advertiser_id":1,"campaign_name":"Campaign
+        1","budget_cap":{"metric":"total_fees","interval":"flight","amount":1,"enforce_as_cap":"t","opt_metric":null},"other_caps":[],"timezone_id":"Europe/Lisbon","timezone_use_dst":"T","customer_order_number":null,"start_time":"2018-01-04","end_time":"2018-01-04","third_party_services":null,"frequency_cap":"0","frequency_cap_interval":"day","status":"Active","account_id":123456,"is_managed":"F","is_managed_service":"F","nielsen_activated":"F","parent_campaign_id":null,"fee":null,"margin_type":null,"gender":"Both","start_age":"13","end_age":"999","ethnicity":"all","adobe_booster":"F","geos":"US"},{"@uri":"https://api.tubemogul.com/v3/trafficking/campaigns/2","campaign_id":2,"campaign_key":"key2","advertiser_id":1,"campaign_name":"Campaign
+        2","budget_cap":{"metric":"total_fees","interval":"flight","amount":10000,"enforce_as_cap":"t","opt_metric":null},"other_caps":[],"timezone_id":"Europe/Berlin","timezone_use_dst":"T","customer_order_number":null,"start_time":"2017-06-26","end_time":"2017-07-02","third_party_services":null,"frequency_cap":"1","frequency_cap_interval":"day","status":"Active","account_id":123456,"is_managed":"F","is_managed_service":"F","nielsen_activated":"F","parent_campaign_id":null,"fee":null,"margin_type":null,"gender":"Both","start_age":"13","end_age":"999","ethnicity":"all","adobe_booster":"F","geos":"US"},{"@uri":"https://api.tubemogul.com/v3/trafficking/campaigns/3","campaign_id":3,"campaign_key":"key3","advertiser_id":1,"campaign_name":"Campaign
+        3","budget_cap":{"metric":"total_fees","interval":"flight","amount":500,"enforce_as_cap":"t","opt_metric":null},"other_caps":[],"timezone_id":"Europe/Berlin","timezone_use_dst":"T","customer_order_number":null,"start_time":"2017-07-05","end_time":"2017-07-12","third_party_services":null,"frequency_cap":"3","frequency_cap_interval":"week","status":"Active","account_id":123456,"is_managed":"F","is_managed_service":"F","nielsen_activated":"F","parent_campaign_id":null,"fee":null,"margin_type":null,"gender":"Both","start_age":"13","end_age":"999","ethnicity":"all","adobe_booster":"F","geos":"US"},{"@uri":"https://api.tubemogul.com/v3/trafficking/campaigns/4","campaign_id":4,"campaign_key":"key4","advertiser_id":1,"campaign_name":"Campaign
+        4","budget_cap":{"metric":"total_fees","interval":"flight","amount":10000,"enforce_as_cap":"t","opt_metric":null},"other_caps":[],"timezone_id":"Europe/Berlin","timezone_use_dst":"T","customer_order_number":null,"start_time":"2017-09-29","end_time":"2017-10-09","third_party_services":null,"frequency_cap":"1","frequency_cap_interval":"day","status":"Active","account_id":123456,"is_managed":"F","is_managed_service":"F","nielsen_activated":"F","parent_campaign_id":null,"fee":null,"margin_type":null,"gender":"Both","start_age":"13","end_age":"999","ethnicity":"all","adobe_booster":"F","geos":"US"},{"@uri":"https://api.tubemogul.com/v3/trafficking/campaigns/5","campaign_id":5,"campaign_key":"key5","advertiser_id":1,"campaign_name":"Campaign
+        5","budget_cap":{"metric":"total_fees","interval":"flight","amount":5892,"enforce_as_cap":"t","opt_metric":null},"other_caps":[],"timezone_id":"Europe/Berlin","timezone_use_dst":"T","customer_order_number":null,"start_time":"2017-12-29","end_time":"2018-01-06","third_party_services":null,"frequency_cap":"2","frequency_cap_interval":"day","status":"Active","account_id":123456,"is_managed":"F","is_managed_service":"F","nielsen_activated":"F","parent_campaign_id":null,"fee":null,"margin_type":null,"gender":"Both","start_age":"13","end_age":"999","ethnicity":"all","adobe_booster":"F","geos":"US"},{"@uri":"https://api.tubemogul.com/v3/trafficking/campaigns/6","campaign_id":6,"campaign_key":"key6","advertiser_id":1,"campaign_name":"Campaign
+        6","budget_cap":{"metric":"total_fees","interval":"flight","amount":500,"enforce_as_cap":"t","opt_metric":null},"other_caps":[],"timezone_id":"America/New_York","timezone_use_dst":"T","customer_order_number":null,"start_time":"2018-01-03","end_time":"2018-01-07","third_party_services":null,"frequency_cap":"0","frequency_cap_interval":"day","status":"Active","account_id":123456,"is_managed":"F","is_managed_service":"F","nielsen_activated":"F","parent_campaign_id":null,"fee":null,"margin_type":null,"gender":"Both","start_age":"13","end_age":"999","ethnicity":"all","adobe_booster":"F","geos":"US"},{"@uri":"https://api.tubemogul.com/v3/trafficking/campaigns/7","campaign_id":7,"campaign_key":"key7","advertiser_id":1,"campaign_name":"Campaign
+        7","budget_cap":{"metric":"total_fees","interval":"flight","amount":5000,"enforce_as_cap":"t","opt_metric":null},"other_caps":[],"timezone_id":"Europe/Berlin","timezone_use_dst":"T","customer_order_number":null,"start_time":"2018-01-24","end_time":"2018-02-07","third_party_services":null,"frequency_cap":"0","frequency_cap_interval":"day","status":"Inactive","account_id":123456,"is_managed":"F","is_managed_service":"F","nielsen_activated":"F","parent_campaign_id":null,"fee":null,"margin_type":null,"gender":"Both","start_age":"13","end_age":"999","ethnicity":"all","adobe_booster":"F","geos":"US"},{"@uri":"https://api.tubemogul.com/v3/trafficking/campaigns/8","campaign_id":8,"campaign_key":"key8","advertiser_id":1,"campaign_name":"Campaign
+        8","budget_cap":{"metric":"total_fees","interval":"flight","amount":8200,"enforce_as_cap":"t","opt_metric":null},"other_caps":[],"timezone_id":"Europe/Berlin","timezone_use_dst":"T","customer_order_number":null,"start_time":"2018-03-05","end_time":"2018-03-25","third_party_services":null,"frequency_cap":"2","frequency_cap_interval":"day","status":"Active","account_id":123456,"is_managed":"F","is_managed_service":"F","nielsen_activated":"F","parent_campaign_id":null,"fee":null,"margin_type":null,"gender":"Both","start_age":"13","end_age":"999","ethnicity":"all","adobe_booster":"F","geos":"US"},{"@uri":"https://api.tubemogul.com/v3/trafficking/campaigns/9","campaign_id":9,"campaign_key":"key9","advertiser_id":1,"campaign_name":"Campaign
+        9","budget_cap":{"metric":"total_fees","interval":"flight","amount":8000,"enforce_as_cap":"t","opt_metric":null},"other_caps":[],"timezone_id":"Europe/Berlin","timezone_use_dst":"T","customer_order_number":null,"start_time":"2018-05-01","end_time":"2018-05-14","third_party_services":null,"frequency_cap":"2","frequency_cap_interval":"day","status":"Active","account_id":123456,"is_managed":"F","is_managed_service":"F","nielsen_activated":"F","parent_campaign_id":null,"fee":null,"margin_type":null,"gender":"Both","start_age":"13","end_age":"999","ethnicity":"all","adobe_booster":"F","geos":"US"},{"@uri":"https://api.tubemogul.com/v3/trafficking/campaigns/10","campaign_id":10,"campaign_key":"key10","advertiser_id":1,"campaign_name":"Campaign
+        10","budget_cap":{"metric":"total_fees","interval":"flight","amount":18750,"enforce_as_cap":"t","opt_metric":null},"other_caps":[],"timezone_id":"Europe/Berlin","timezone_use_dst":"T","customer_order_number":null,"start_time":"2018-04-23","end_time":"2018-05-07","third_party_services":null,"frequency_cap":"2","frequency_cap_interval":"day","status":"Active","account_id":123456,"is_managed":"F","is_managed_service":"F","nielsen_activated":"F","parent_campaign_id":null,"fee":null,"margin_type":null,"gender":"Both","start_age":"13","end_age":"999","ethnicity":"all","adobe_booster":"F","geos":"US"}]}'
+    http_version: 
+  recorded_at: Fri, 19 Oct 2018 20:08:21 GMT
+recorded_with: VCR 4.0.0

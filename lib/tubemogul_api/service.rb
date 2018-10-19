@@ -43,10 +43,8 @@ class TubemogulApi::Service
     case response['@type']
     when 'Collection'
       parse_collection(response)
-    when 'Advertiser'
-      OpenStruct.new(response)
     else
-      raise(TubemogulApi::NotImplemented, format('Unknown response type %s.', response['@type']))
+      OpenStruct.new(response)
     end
   end
 

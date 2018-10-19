@@ -39,7 +39,7 @@ service.get_all # returns all advertisers
 
 Also the `spec/integration` directory contains examples.
 
-Note: Only the `Advertisers` Service `GET` requests are tested so far.
+Note: Only the `Advertiser` and `Campaign` services with `get` and `get_all` requests are implemented so far.
 
 ## Development
 
@@ -49,8 +49,13 @@ To recreate or create new VCR episodes, you need to set proper values for env va
 * `TUBEMOGUL_CLIENT_ID`
 * `TUBEMOGUL_SECRET_KEY`
 * `SAMPLE_ADVERTISER_ID`
+* `ACCOUNT_ID`
+* `SAMPLE_CAMPAIGN_ID`
 
-We recommend that you set it in `.env.test` file. 
+We recommend that you set it in `.env.test` file.
+ 
+Note that some specs fail when recording new VCR episodes due to filtering of sensitive data.
+But after that, all specs should pass in playback mode.
 
 We run `rake rubocop` to make sure, everything looks good.
 

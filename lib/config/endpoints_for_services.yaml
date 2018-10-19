@@ -1,2 +1,3 @@
 service:
   advertiser: 'v3/trafficking/advertisers'
+  campaign: 'v3/trafficking/campaigns'
