@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.1.0] (2018-10-18)
 ### Added
 - Advertisers API
+- Campaigns API
 
 [Unreleased]: https://github.com/ad2games/tubemogul_api/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/ad2games/tubemogul_api/commits/v0.1.0
