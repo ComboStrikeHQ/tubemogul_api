@@ -25,20 +25,11 @@ module Anonymize
   module_function :campaign
 
   def placement(record, id)
-    if id == 1 && ENV.fetch('SAMPLE_PLACEMENT_ID') == 'sample-placement-id'
-      puts 'Add to your .env.test file:'
-      puts "SAMPLE_PLACEMENT_ID: '#{item['placement_id']}'"
-    end
-    uri = if record['@type'] == 'placement'
-            record['@uri'].sub(%r{(trafficking\/placements\/)([^\?]+)}, "\\1#{id}")
-          elsif record['@type'] == 'placement_report'
-            record['@uri'].sub(%r{(reporting\/placements\/)\d+(\??.*)}, "\\1#{id}\\2")
-    end
     replace(
       record,
       'placement_id' => id,
       'placement_key' => "placementkey#{id}",
-      '@uri' => uri,
+      '@uri' => placement_uri(record, id),
       'placement_name' => "Placement #{id}",
       'campaign_id' => 1,
       'campaign_key' => 'key1',
@@ -47,11 +38,16 @@ module Anonymize
   end
   module_function :placement
 
-  def media_placement(record, id)
-    if id == 1 && ENV.fetch('SAMPLE_MEDIA_PLACEMENT_ID') == 'sample-media-placement-id'
-      puts 'Add to your .env.test file:'
-      puts "SAMPLE_MEDIA_PLACEMENT_ID: '#{record['media_placement_id']}'"
+  def placement_uri(record, id)
+    if record['@type'] == 'placement'
+      record['@uri'].sub(%r{(trafficking\/placements\/)([^\?]+)}, "\\1#{id}")
+    elsif record['@type'] == 'placement_report'
+      record['@uri'].sub(%r{(reporting\/placements\/)\d+(\??.*)}, "\\1#{id}\\2")
     end
+  end
+  module_function :placement_uri
+
+  def media_placement(record, id)
     replace(
       record,
       'media_placement_id' => id,

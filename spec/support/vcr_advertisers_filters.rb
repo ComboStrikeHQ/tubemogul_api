@@ -3,9 +3,11 @@
 VCR.configure do |c|
   c.filter_sensitive_data('sample-advertiser-id') { ENV.fetch('SAMPLE_ADVERTISER_ID') }
 
+  SINGLE_ADVERTISER_URI_REGEXP = %r{trafficking\/advertisers\/sample-advertiser-id(\?.*)?\z}
+  MULTIPLE_ADVERTISERS_URI_REGEXP = %r{trafficking\/advertisers\/?(\?.*)?\z}
+
   c.before_record do |interaction|
-    next unless interaction.request.uri =~
-        %r{trafficking\/advertisers\/sample-advertiser-id(\?.*)?\z}
+    next unless interaction.request.uri.match?(SINGLE_ADVERTISER_URI_REGEXP)
 
     response = JSON.parse(interaction.response.body)
     Anonymize.advertiser(response, 'sample-advertiser-id')
@@ -14,7 +16,7 @@ VCR.configure do |c|
   end
 
   c.before_record do |interaction|
-    next unless interaction.request.uri =~ %r{trafficking\/advertisers\/?(\?.*)?\z}
+    next unless interaction.request.uri.match?(MULTIPLE_ADVERTISERS_URI_REGEXP)
 
     response = JSON.parse(interaction.response.body)
     items = response['items']
