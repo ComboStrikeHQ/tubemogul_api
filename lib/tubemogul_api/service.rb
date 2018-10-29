@@ -18,7 +18,7 @@ class TubemogulApi::Service
   end
 
   def uri_suffix
-    @@endpoints ||= YAML.load_file( # rubocop:disable Style/ClassVars
+    @@endpoints ||= YAML.load_file(
       TubemogulApi.root.join('lib', 'config', 'endpoints_for_services.yaml')
     )
 
@@ -40,8 +40,8 @@ class TubemogulApi::Service
   end
 
   def parse_response(response)
-    case response['@type']
-    when 'Collection'
+    case response['@type']&.downcase
+    when 'collection'
       parse_collection(response)
     else
       OpenStruct.new(response)
