@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 29 Oct 2018 17:18:55 GMT
+      - Mon, 29 Oct 2018 17:58:38 GMT
       Content-Type:
       - application/json
       Cache-Control:
@@ -36,9 +36,9 @@ http_interactions:
       - '155'
     body:
       encoding: UTF-8
-      string: '{"account_id":123456,"token":"some-token","scope":"login_mode:self","token_type":"bearer","expire_time":1540837135,"expires_in":3600}'
+      string: '{"account_id":123456,"token":"some-token","scope":"login_mode:self","token_type":"bearer","expire_time":1540839518,"expires_in":3600}'
     http_version: 
-  recorded_at: Mon, 29 Oct 2018 17:18:55 GMT
+  recorded_at: Mon, 29 Oct 2018 17:58:38 GMT
 - request:
     method: get
     uri: https://api.tubemogul.com/v3/trafficking/placements/sample-placement-id
@@ -60,7 +60,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 29 Oct 2018 17:18:55 GMT
+      - Mon, 29 Oct 2018 17:58:39 GMT
       Access-Control-Allow-Origin:
       - "*"
       Content-Type:
@@ -73,7 +73,7 @@ http_interactions:
       - private
     body:
       encoding: UTF-8
-      string: '{"@uri":"https://api.tubemogul.com/v3/trafficking/placements/sample-placement-id","@type":"placement","api_version":"v3","campaign_id":"1","campaign_key":"key1","package_id":null,"package_name":null,"placement_id":"sample-placement-id","placement_key":"placementkeysample-placement-id","placement_name":"Placement
+      string: '{"@uri":"https://api.tubemogul.com/v3/trafficking/placements/sample-placement-id","@type":"placement","api_version":"v3","campaign_id":1,"campaign_key":"key1","package_id":null,"package_name":null,"placement_id":"sample-placement-id","placement_key":"placementkeysample-placement-id","placement_name":"Placement
         sample-placement-id","is_managed":"F","ad_template":"connected_tv_30","ad_template_human_name":"Connected
         TV 30","placement_type":"site","budget_cap":{"metric":"total_fees","interval":"flight","amount":5000,"enforce_as_cap":"t","opt_metric":null},"primary_goal":{"metric":"impressions","interval":"flight","amount":0,"enforce_as_cap":"f","opt_metric":null},"optimization_goal":{"metric":"views","interval":"flight","amount":0.03,"enforce_as_cap":"f","opt_metric":null},"pacing_strategy":"even","other_caps":[],"pace_on":"budget","max_bid":"38","start_time":"2018-03-05","end_time":"2018-03-25","frequency_cap":"2","frequency_cap_interval":"day","frequency_cap_interval_multiplier":1,"status":"active","created":"2018-03-05
         17:02:08","targeting":{"sites":{"total_included":0,"include":[],"exclude":["670405","672933","708754","708755","735498","760612","760613","760618"],"@type":"Sites","total_excluded":8},"geos":{"world":"F","countries":{"total_included":1,"total_excluded":0,"include":["232"],"exclude":[],"@type":"Countries"},"states":{"total_included":0,"total_excluded":0,"include":[],"exclude":[],"@type":"states"},"cities":{"total_included":0,"total_excluded":0,"include":[],"exclude":[],"@type":"Cities"},"metros":{"total_included":0,"total_excluded":0,"include":[],"exclude":[],"@type":"Metros"},"postal_codes":{"total_included":0,"total_excluded":0,"include":[],"exclude":[],"@uri":"https://api.tubemogul.com/v3/trafficking/placements/sample-placement-id/targeting/geos/postal_codes","@type":"Postal
@@ -81,5 +81,5 @@ http_interactions:
         Districts"}},"devices":{"total_included":0,"total_excluded":0,"include":[],"exclude":[],"@uri":"https://api.tubemogul.com/v3/trafficking/placements/sample-placement-id/targeting/devices"},"topics":{"total_included":0,"total_excluded":0,"include":[],"exclude":[],"@uri":"https://api.tubemogul.com/v3/trafficking/placements/sample-placement-id/targeting/topics","@type":"topics"},"isps":{"total_included":0,"total_excluded":0,"include":[],"exclude":[],"@uri":"https://api.tubemogul.com/v3/trafficking/placements/sample-placement-id/targeting/isps","@type":"isps"},"vendors":{"3rd_party_services":{"total_included":0,"total_excluded":0,"include":[],"exclude":[],"@uri":"https://api.tubemogul.com/v3/trafficking/placements/sample-placement-id/targeting/3rd_party_services","@type":"3rd_party_vendor_services"},"audience_extension":"F","geo_fence_segments":{"total_included":0,"total_excluded":0,"include":[],"exclude":[],"@uri":"https://api.tubemogul.com/v3/trafficking/placements/sample-placement-id/targeting/geo_fencing","@type":"geo_fence_segments"}},"segment":null,"dayparts":null,"site_tiers":{"total_included":3,"total_excluded":0,"include":["1","2","3"],"exclude":[],"@type":"Tiers"},"site_categories":{"total_included":0,"total_excluded":0,"include":[],"exclude":[],"@type":"Categories"},"feeds":{"total_included":1,"total_excluded":0,"include":["sample-media-placement-id"],"exclude":[],"characteristics":{"total_included":0,"total_excluded":0,"include":[],"exclude":[],"@type":"characteristics"},"@uri":"https://api.tubemogul.com/v3/trafficking/placements/sample-placement-id/targeting/media_placements","@type":"feeds"},"inventory_sources":{"all_public":"F","all_private":"F","all_on_demand":"F","sources":{"total_included":0,"total_excluded":0,"include":[],"exclude":[],"@type":"sources"}},"experimental":{"programmatic_reserve":"F","exclude_autoplay_preroll":"F","site_safety_block":"F","blacklist_opt_out_greylist":"F","blacklist_opt_out_bd_block":"F","blacklist_opt_out_campaign":"F","blacklist_opt_out_account":"F","blacklist_opt_out_advertiser":"F","track_mobile_installs":"F"},"recency":null,"demographic":{"gender":"all","max_age":"999","min_age":"13","demographic_booster":"F","demographic_geos":"us"},"connection_types":{"total_included":0,"total_excluded":0,"include":[],"exclude":[],"@type":"Connection
         Types"},"experimental_sets":null,"libraries":{"audiences":{"standard":"","suppression":[]}},"tracking":{"conversion_pixels":{"total_included":0,"total_excluded":0,"include":[],"exclude":[],"@uri":"https://api.tubemogul.com/v3/trafficking/placements/sample-placement-id/targeting/conversion_pixels","@type":"conversion_pixels"},"event_pixels":{"total_included":0,"total_excluded":0,"include":[],"exclude":[],"@uri":"https://api.tubemogul.com/v3/trafficking/placements/sample-placement-id/targeting/event_pixels","@type":"event_pixels"},"run_as_experiment":null,"ads":{"total_included":2,"total_excluded":0,"include":["4116922800","4116922878"],"exclude":[],"@uri":"https://api.tubemogul.com/v3/trafficking/placements/sample-placement-id/targeting/ads","@type":"ads"},"custom_objectives":{"total_included":0,"total_excluded":0,"include":[],"exclude":[],"@uri":"https://api.tubemogul.com/v3/trafficking/placements/sample-placement-id/targeting/custom_objectives","@type":"custom_objectives"}},"forecasting":{"duration":[],"size":[],"client_tech":[],"interstitial_size":[],"expandable_banner":[],"user_initiation":[]},"unscreened_sites":"F","include_mobile_app":"T","traffic_types":{"websites":"F","apps":"T"},"ads_txt":"opt_out","sivt_enabled":"F"},"optimization_goals":[],"created_by_api_version":"v3","created_by_user_id":"481735","survey_control_placement_id":null,"run_level":"100","private_feeds_only":"T","markup_percentage":24.0,"bid_rules":[],"is_zero_level":"F","keywords":[],"fee":null,"prebid_filters":[],"is_custom_ad_scheduling_enabled":"F","survey_exposed":"T","is_france_catchup":"F"}'
     http_version: 
-  recorded_at: Mon, 29 Oct 2018 17:18:55 GMT
+  recorded_at: Mon, 29 Oct 2018 17:58:39 GMT
 recorded_with: VCR 4.0.0
