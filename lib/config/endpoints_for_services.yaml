@@ -1,3 +1,5 @@
 service:
   advertiser: 'v3/trafficking/advertisers'
   campaign: 'v3/trafficking/campaigns'
+  placement: 'v3/trafficking/placements'
+  reporting: 'v2/reporting'

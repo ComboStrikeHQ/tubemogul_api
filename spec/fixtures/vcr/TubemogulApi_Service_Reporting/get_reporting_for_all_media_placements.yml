@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.tubemogul.com/oauth/token
+    body:
+      encoding: UTF-8
+      string: grant_type=client_credentials
+    headers:
+      Authorization:
+      - clipped
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Faraday v0.15.3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 29 Oct 2018 17:20:40 GMT
+      Content-Type:
+      - application/json
+      Cache-Control:
+      - no-store
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '155'
+    body:
+      encoding: UTF-8
+      string: '{"account_id":123456,"token":"some-token","scope":"login_mode:self","token_type":"bearer","expire_time":1540837240,"expires_in":3600}'
+    http_version: 
+  recorded_at: Mon, 29 Oct 2018 17:20:40 GMT
+- request:
+    method: get
+    uri: https://api.tubemogul.com/v2/reporting/media_placements?end_day=2018-03-11&start_day=2018-03-11
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - clipped
+      User-Agent:
+      - Faraday v0.15.3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 29 Oct 2018 17:20:41 GMT
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      Connection:
+      - close
+      Cache-Control:
+      - private
+    body:
+      encoding: UTF-8
+      string: '{"@uri":"https://api.tubemogul.com/v2/reporting/media_placements?start_day=2018-03-11&end_day=2018-03-11&timezone=America/New_York&order=desc&sort=views&offset=0&limit=50","@type":"collection","paging":{"offset":0,"limit":50,"num_items":2,"has_more_items":false,"prev_page_uri":null,"next_page_uri":null},"items":[{"@uri":"https://api.tubemogul.com/v2/reporting/media_placements/sample-media-placement-id?start_day=2018-03-11&end_day=2018-03-11&timezone=America/New_York&order=desc&sort=views&offset=0&limit=50","@type":"media_placement_report","media_placement_id":1,"media_placement_name":"Media
+        Placement 1","media_property_id":"media-property-id","media_property_name":"Media
+        Property Name","stats":{"@type":"collection","start_day":"2018-03-11","end_day":"2018-03-11","timezone":"America/New_York","bucketed_by":"range","buckets":[{"range":"2018-03-11/2018-03-11","data":{"@type":"media_placements_media_placement_metrics","impressions":8596,"views":8596,"play_rate":100,"viewed_minutes":3850.28,"playtime_per_view":26.87,"pct_viewed_avg":90,"completions25":8481,"completions50":8339,"completions75":8334,"completions100":5825,"pct_completions25":99,"pct_completions50":97,"pct_completions75":97,"pct_completions100":68,"shares_facebook":0,"shares_twitter":0,"engagements":0,"facebook_fan_page_clicks":0,"video_and_overlay_clicks":1,"total_click_throughs":1,"ctr":0.01,"companion_impressions":0,"companion_click_throughs":0,"companion_ctr":0,"conversions_impressions":0,"conversions_impressions_avg_days":0,"conversions_view":0,"conversions_view_avg_days":0,"conversions_click_through":0,"conversions_click_through_avg_days":0,"conversions_total":0,"conversions_rate":0,"viewability_instrumented_impressions":0,"viewability_unmeasurable_iframe":0,"viewability_unmeasurable_other":0,"viewable_impressions":0,"viewable_impression_rate":0,"viewable_pct_impressions":0,"viewable_views":0,"viewable_complete25":0,"viewable_complete50":0,"viewable_complete75":0,"viewable_complete100":0,"viewable_pct_complete25":0,"viewable_pct_complete50":0,"viewable_pct_complete75":0,"viewable_pct_complete100":0,"not_viewable_impressions":0,"not_viewable_pct_impressions":0,"player_width_avg":0,"player_height_avg":0,"w_h_measured":"0x0","mobile_installs":0,"facebook_page_likes":0,"facebook_post_comments":0,"facebook_post_likes":0,"facebook_post_shares":0,"snapchat_swipes":0,"snapchat_android_installs":0,"snapchat_ios_installs":0,"snapchat_attachment_complete25":0,"snapchat_attachment_complete50":0,"snapchat_attachment_complete75":0,"snapchat_attachment_complete100":0,"snapchat_attachment_complete25_rate":0,"snapchat_attachment_complete50_rate":0,"snapchat_attachment_complete75_rate":0,"snapchat_attachment_complete100_rate":0,"click_per_view":0.01,"click_through_view_rate":0.0116,"viewable_measurable_impressions":0,"viewable_measurable_rate":0,"viewable_unmeasurable_impressions":8596,"viewable_unmeasurable_rate_total":100,"viewable_unmeasurable_rate_not_supported":100,"viewable_unmeasurable_rate_other":0,"viewable_unmeasurable_rate_iframe":0,"survey_starts":0,"survey_completions":0,"bids":13098,"bid_rate":0.01,"win_rate":65.63,"auctions":89657921,"vCPCV":0,"viewability_rating":"N/A","small_player":"Y","feed_cost":241560705,"total_fees":283030842,"billable_total_fees":283030842,"non_billable_total_fees":0,"billable_media_fees":283030842,"billable_data_fees":0,"billable_other_fees":0,"non_billable_media_fees":0,"non_billable_data_fees":0,"non_billable_other_fees":0,"cpm":32925877.38,"cpv":32925.88,"cpcv":48588.99,"cpc":283030842,"cpi":0,"cpa":0,"vcpm":0,"media_spend_total":283030842,"media_spend_cpm":32925877.38,"data_spend_total":0,"data_spend_cpm":0,"other_spend_total":0,"other_spend_cpm":0,"advertiser_media_fees":0,"advertiser_data_fees":0,"advertiser_other_fees":0,"advertiser_total_fees":283030842,"advertiser_costs":283030842,"advertiser_cpm":32925877.38,"advertiser_vcpm":0,"advertiser_cpc":283030842,"advertiser_cpcv":48588.99,"advertiser_cpv":32925.88,"advertiser_cpi":0,"advertiser_cpa":0,"advertiser_cpe":0}}]}},{"@uri":"https://api.tubemogul.com/v2/reporting/media_placements/2?start_day=2018-03-11&end_day=2018-03-11&timezone=America/New_York&order=desc&sort=views&offset=0&limit=50","@type":"media_placement_report","media_placement_id":2,"media_placement_name":"Media
+        Placement 2","media_property_id":"media-property-id","media_property_name":"Media
+        Property Name","stats":{"@type":"collection","start_day":"2018-03-11","end_day":"2018-03-11","timezone":"America/New_York","bucketed_by":"range","buckets":[{"range":"2018-03-11/2018-03-11","data":{"@type":"media_placements_media_placement_metrics","impressions":5340,"views":5340,"play_rate":100,"viewed_minutes":2590.9,"playtime_per_view":29.11,"pct_viewed_avg":97,"completions25":5228,"completions50":5190,"completions75":5166,"completions100":5147,"pct_completions25":98,"pct_completions50":97,"pct_completions75":97,"pct_completions100":96,"shares_facebook":0,"shares_twitter":0,"engagements":0,"facebook_fan_page_clicks":0,"video_and_overlay_clicks":0,"total_click_throughs":0,"ctr":0,"companion_impressions":0,"companion_click_throughs":0,"companion_ctr":0,"conversions_impressions":0,"conversions_impressions_avg_days":0,"conversions_view":0,"conversions_view_avg_days":0,"conversions_click_through":0,"conversions_click_through_avg_days":0,"conversions_total":0,"conversions_rate":0,"viewability_instrumented_impressions":0,"viewability_unmeasurable_iframe":0,"viewability_unmeasurable_other":0,"viewable_impressions":0,"viewable_impression_rate":0,"viewable_pct_impressions":0,"viewable_views":0,"viewable_complete25":0,"viewable_complete50":0,"viewable_complete75":0,"viewable_complete100":0,"viewable_pct_complete25":0,"viewable_pct_complete50":0,"viewable_pct_complete75":0,"viewable_pct_complete100":0,"not_viewable_impressions":0,"not_viewable_pct_impressions":0,"player_width_avg":0,"player_height_avg":0,"w_h_measured":"0x0","mobile_installs":0,"facebook_page_likes":0,"facebook_post_comments":0,"facebook_post_likes":0,"facebook_post_shares":0,"snapchat_swipes":0,"snapchat_android_installs":0,"snapchat_ios_installs":0,"snapchat_attachment_complete25":0,"snapchat_attachment_complete50":0,"snapchat_attachment_complete75":0,"snapchat_attachment_complete100":0,"snapchat_attachment_complete25_rate":0,"snapchat_attachment_complete50_rate":0,"snapchat_attachment_complete75_rate":0,"snapchat_attachment_complete100_rate":0,"click_per_view":0,"click_through_view_rate":0,"viewable_measurable_impressions":0,"viewable_measurable_rate":0,"viewable_unmeasurable_impressions":5340,"viewable_unmeasurable_rate_total":100,"viewable_unmeasurable_rate_not_supported":100,"viewable_unmeasurable_rate_other":0,"viewable_unmeasurable_rate_iframe":0,"survey_starts":0,"survey_completions":0,"bids":4592,"bid_rate":0.7,"win_rate":116.29,"auctions":657983,"vCPCV":0,"viewability_rating":"N/A","small_player":"Y","feed_cost":88964400,"total_fees":104236800,"billable_total_fees":104236800,"non_billable_total_fees":0,"billable_media_fees":104236800,"billable_data_fees":0,"billable_other_fees":0,"non_billable_media_fees":0,"non_billable_data_fees":0,"non_billable_other_fees":0,"cpm":19520000,"cpv":19520,"cpcv":20251.95,"cpc":0,"cpi":0,"cpa":0,"vcpm":0,"media_spend_total":104236800,"media_spend_cpm":19520000,"data_spend_total":0,"data_spend_cpm":0,"other_spend_total":0,"other_spend_cpm":0,"advertiser_media_fees":0,"advertiser_data_fees":0,"advertiser_other_fees":0,"advertiser_total_fees":104236800,"advertiser_costs":104236800,"advertiser_cpm":19520000,"advertiser_vcpm":0,"advertiser_cpc":0,"advertiser_cpcv":20251.95,"advertiser_cpv":19520,"advertiser_cpi":0,"advertiser_cpa":0,"advertiser_cpe":0}}]}}]}'
+    http_version: 
+  recorded_at: Mon, 29 Oct 2018 17:20:41 GMT
+recorded_with: VCR 4.0.0

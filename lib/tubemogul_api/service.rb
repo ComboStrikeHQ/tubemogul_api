@@ -40,8 +40,8 @@ class TubemogulApi::Service
   end
 
   def parse_response(response)
-    case response['@type']
-    when 'Collection'
+    case response['@type']&.downcase
+    when 'collection'
       parse_collection(response)
     else
       OpenStruct.new(response)

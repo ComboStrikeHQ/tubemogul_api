@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class TubemogulApi::Connection
-  TUBEMOGUL_API_URL = 'https://api.tubemogul.com'.freeze
+  TUBEMOGUL_API_URL = 'https://api.tubemogul.com'
 
   attr_reader :config
 

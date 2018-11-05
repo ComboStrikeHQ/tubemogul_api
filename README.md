@@ -37,22 +37,17 @@ service.get(10) # returns the advertiser with the ID 10
 service.get_all # returns all advertisers
 ```
 
-Also the `spec/integration` directory contains examples.
+Note: Currently only `get` and `get_all` requests are implemented and for a limited set of services. 
+Check `lib/tubemogul_api/service` directory to see which services are available.
 
-Note: Only the `Advertiser` and `Campaign` services with `get` and `get_all` requests are implemented so far.
+Also the `spec/integration` directory contains usage examples.
 
 ## Development
 
 Run specs with `bundle exec rspec`.
 
-To recreate or create new VCR episodes, you need to set proper values for env vars:
-* `TUBEMOGUL_CLIENT_ID`
-* `TUBEMOGUL_SECRET_KEY`
-* `SAMPLE_ADVERTISER_ID`
-* `ACCOUNT_ID`
-* `SAMPLE_CAMPAIGN_ID`
-
-We recommend that you set it in `.env.test` file.
+To recreate or create new VCR episodes, you need to set proper values for env vars. Check .env to 
+see the list of env variables required. We recommend that you set it in `.env.test` file.
  
 Note that some specs fail when recording new VCR episodes due to filtering of sensitive data.
 But after that, all specs should pass in playback mode.
